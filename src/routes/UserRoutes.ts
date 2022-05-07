@@ -5,6 +5,8 @@ import { UserContreller } from '../controllers/UserController'
 const userRoutes = Router()
 const userController = new UserContreller()
 
+userRoutes.get('/users', userController.list)
+
 userRoutes.post('/users', celebrate({
   [Segments.BODY]: Joi.object().keys({
     name: Joi.string().required(),
@@ -14,5 +16,7 @@ userRoutes.post('/users', celebrate({
     phone: Joi.string().required(),
   })
 }), userController.create)
+
+userRoutes.put('/users/:id', userController.update)
 
 export { userRoutes }
