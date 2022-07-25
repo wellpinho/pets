@@ -2,9 +2,11 @@ const { Router } = require("express");
 const { celebrate, Joi, errors, Segments } = require("celebrate");
 
 const { UserController } = require("../controllers/userController");
+const { Login } = require("../controllers/login");
 
 const userRoutes = Router();
 const userController = new UserController();
+const loginUser = new Login();
 
 userRoutes.post(
   "/",
@@ -20,7 +22,7 @@ userRoutes.post(
   userController.create
 );
 
-userRoutes.get("/checkuser", userController.checkUser);
+userRoutes.get("/checkuser", loginUser.checkUser);
 
 userRoutes.post(
   "/login",
@@ -30,7 +32,7 @@ userRoutes.post(
       password: Joi.string().required(),
     }),
   }),
-  userController.login
+  loginUser.login
 );
 
 userRoutes.use(errors());
