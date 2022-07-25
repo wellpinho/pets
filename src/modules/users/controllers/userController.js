@@ -27,7 +27,21 @@ class UserController {
   }
 
   async login(req, res) {
-    const { email, passord } = req.body;
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+
+    if (!user) {
+      return res.status(400).json({ error: "User not found!" });
+    }
+
+    // check if password match with db password
+    const checkPassword = await bcrypt.compare(password, user.password);
+
+    if (!checkPassword) {
+      return res.status(400).json({ error: "User not found!" });
+    }
+
+    await createUserToken(user, req, res);
 
     return res.status(200).json({ message: "Logged in", user: email });
   }

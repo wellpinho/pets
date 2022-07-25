@@ -21,7 +21,7 @@ userRoutes.post(
 );
 
 userRoutes.post(
-  "/",
+  "/login",
   celebrate({
     [Segments.BODY]: Joi.object().keys({
       email: Joi.string().required(),
