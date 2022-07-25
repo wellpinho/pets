@@ -3,6 +3,7 @@ const { celebrate, Joi, errors, Segments } = require("celebrate");
 const { UserController } = require("../controllers/userController");
 const { Login } = require("../controllers/login");
 const { checkToken } = require("../../../helpers/verifyToken");
+const { imageUpload } = require("../../../helpers/upload");
 
 const userRoutes = Router();
 const userController = new UserController();
@@ -45,7 +46,12 @@ userRoutes.post(
   loginUser.login
 );
 
-userRoutes.put("/edit/:id", checkToken, userController.update);
+userRoutes.put(
+  "/edit/:id",
+  checkToken,
+  imageUpload.single("image"),
+  userController.update
+);
 
 userRoutes.use(errors());
 

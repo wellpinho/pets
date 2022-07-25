@@ -50,7 +50,10 @@ class UserController {
     const user = await getUserByToken(token);
 
     const { phone, address, password, passwordConfirmation } = req.body;
-    let image = "";
+
+    if (req.file) {
+      user.image = req.file.filename;
+    }
 
     if (!user) {
       return res.status(400).json({ error: "User not found!" });
