@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const Pet = new Schema(
@@ -19,9 +19,16 @@ const Pet = new Schema(
       type: String,
       required: true,
     },
+    breed: {
+      type: String,
+      required: true,
+    },
+    family: {
+      type: String,
+      required: true,
+    },
     images: {
       type: Array,
-      required: true,
     },
     available: {
       type: Boolean,
@@ -33,4 +40,4 @@ const Pet = new Schema(
   { timestamps: true }
 );
 
-module.exports = Pet;
+module.exports = mongoose.model("pets", Pet);
