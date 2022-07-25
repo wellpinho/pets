@@ -20,6 +20,8 @@ userRoutes.post(
   userController.create
 );
 
+userRoutes.get("/checkuser", userController.checkUser);
+
 userRoutes.post(
   "/login",
   celebrate({
