@@ -8,6 +8,16 @@ const userRoutes = Router();
 const userController = new UserController();
 const loginUser = new Login();
 
+userRoutes.get(
+  "/:id",
+  celebrate({
+    [Segments.BODY]: Joi.object().keys({
+      id: Joi.string().required(),
+    }),
+  }),
+  userController.show
+);
+
 userRoutes.post(
   "/",
   celebrate({
