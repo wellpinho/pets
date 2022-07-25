@@ -1,8 +1,8 @@
 const { Router } = require("express");
 const { celebrate, Joi, errors, Segments } = require("celebrate");
-
 const { UserController } = require("../controllers/userController");
 const { Login } = require("../controllers/login");
+const { checkToken } = require("../../../helpers/verifyToken");
 
 const userRoutes = Router();
 const userController = new UserController();
@@ -44,6 +44,8 @@ userRoutes.post(
   }),
   loginUser.login
 );
+
+userRoutes.put("/edit/:id", checkToken, userController.update);
 
 userRoutes.use(errors());
 
