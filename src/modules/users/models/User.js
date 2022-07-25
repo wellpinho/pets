@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const User = new Schema(
+const UserSchema = new Schema(
   {
     name: {
       type: String,
@@ -30,4 +30,4 @@ const User = new Schema(
   { timestamps: true }
 );
 
-module.exports = User;
+module.exports = mongoose.model("users", UserSchema);
