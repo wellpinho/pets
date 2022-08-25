@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1661466778249" clover="3.2.0">
-  <project timestamp="1661466778249" name="All files">
-    <metrics statements="53" coveredstatements="41" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1" elements="56" coveredelements="44" complexity="0" loc="53" ncloc="53" packages="2" files="3" classes="3"/>
+<coverage generated="1661467155602" clover="3.2.0">
+  <project timestamp="1661467155602" name="All files">
+    <metrics statements="48" coveredstatements="37" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1" elements="51" coveredelements="40" complexity="0" loc="48" ncloc="48" packages="2" files="3" classes="3"/>
     <package name="src">
-      <metrics statements="42" coveredstatements="30" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <metrics statements="37" coveredstatements="26" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="/home/well/Documents/pets/src/app.ts">
         <metrics statements="33" coveredstatements="22" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -41,16 +41,11 @@
         <line num="33" count="1" type="stmt"/>
       </file>
       <file name="routes.ts" path="/home/well/Documents/pets/src/routes.ts">
-        <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.errors">

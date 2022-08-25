@@ -9,4 +9,12 @@ describe("## App.ts", () => {
         expect(res.status).toBe(200);
       });
   });
+
+  it("-- home responde with error 404 if dont have path", async () => {
+    await supertest(app)
+      .get("/error")
+      .then((res) => {
+        expect(res.status).toBe(404);
+      });
+  });
 });
