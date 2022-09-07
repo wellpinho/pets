@@ -16,11 +16,11 @@ interface IUpdateUser {
 }
 
 class UserService {
-  // async list() {
-  //   const users = await prismaClient.user.findMany();
+  async list() {
+    const users = await prismaClient.user.findMany();
 
-  //   return users;
-  // }
+    return users;
+  }
 
   async create({ name, email, password, phone, role }: IUser) {
     const userExists = await prismaClient.user.findFirst({

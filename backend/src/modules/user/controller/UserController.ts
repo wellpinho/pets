@@ -2,12 +2,12 @@ import { Request, Response } from "express";
 import { UserService } from "../service/UserService";
 
 class UserController {
-  // async list(req: Request, res: Response) {
-  //   const listUsers = new UserService();
-  //   const users = await listUsers.list();
+  async list(req: Request, res: Response) {
+    const listUsers = new UserService();
+    const users = await listUsers.list();
 
-  //   return res.status(200).json(users);
-  // }
+    return res.status(200).json(users);
+  }
 
   async create(req: Request, res: Response) {
     const { name, email, password, phone } = req.body;
