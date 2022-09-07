@@ -1,3 +1,0 @@
-PORT=4000
-MONGOURI="mongodb://your-user:your-password@localhost:27017/admin"
-SECRET=your-hash
