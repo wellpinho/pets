@@ -1,15 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/logo.png";
 import "./header.css";
 
+import { Context } from "./../../context/UserContext";
+
 const Header = () => {
+  const { authenticated, logout } = useContext(Context);
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container">
-          <a className="navbar-brand logo" href="#">
+          <Link className="navbar-brand logo" to="/">
             <img src={Logo} alt="Adote um pet" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -32,16 +37,22 @@ const Header = () => {
                   <Link to="/">Adotar</Link>
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  <Link to="/login">Login</Link>
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link">
-                  <Link to="/register">Cadastrar</Link>
-                </a>
-              </li>
+              {authenticated ? (
+                <li onClick={logout}>Sair</li>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <Link to="/login">Login</Link>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link">
+                      <Link to="/register">Cadastrar</Link>
+                    </a>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

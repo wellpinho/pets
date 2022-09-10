@@ -11,7 +11,7 @@ const Login = () => {
         <h1 className="h3 mb-3 fw-normal text-color">Login</h1>
 
         <Input
-          text="Nome"
+          text="Email"
           type="email"
           name="name"
           placeholder="Email"
@@ -20,13 +20,13 @@ const Login = () => {
 
         <Input
           text="Senha"
-          type="text"
+          type="password"
           name="password"
           placeholder="Senha"
           handleOnChange={handleOnChange}
         />
 
-        <div class="d-grid gap-2 col-6">
+        <div className="d-grid gap-2 col-6">
           <button className="btn-custom" type="submit">
             Entrar
           </button>

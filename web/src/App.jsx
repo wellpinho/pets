@@ -5,19 +5,24 @@ import Home from "./components/home";
 import Login from "./components/login";
 import Register from "./components/register";
 import Container from "./components/container";
+import { UserProvider } from "./context/UserContext";
+import FlashMessage from "./components/flashMessage";
 
 function App() {
   return (
     <Router>
-      <Header />
-      <Container>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </Container>
-      <Footer />
+      <UserProvider>
+        <Header />
+        <FlashMessage />
+        <Container>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </Container>
+        <Footer />
+      </UserProvider>
     </Router>
   );
 }

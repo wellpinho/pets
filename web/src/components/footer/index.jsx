@@ -37,7 +37,7 @@ const Footer = () => {
             <li className="ms-3">
               <a className="text-muted" href="#">
                 <svg className="bi" width="24" height="24">
-                  <i class="bi bi-instagram"></i>
+                  <i className="bi bi-instagram"></i>
                 </svg>
               </a>
             </li>
