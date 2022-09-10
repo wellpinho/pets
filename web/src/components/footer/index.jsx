@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="container">
         <footer className="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-          <div className="col-md-4 d-flex align-items-center">
+          <div className="d-flex align-items-center">
             <a
               href="/"
               className="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1"
@@ -15,11 +15,14 @@ const Footer = () => {
                 <use xlinkHref="#bootstrap" />
               </svg>
             </a>
-            <span className="mb-3 mb-md-0 text-muted logo-footer">
+            <span className="mb-3 text-muted logo-footer">
               <img src={Logo} alt="adote um pet" />
-              <a href="https://www.linkedin.com/in/wellpinho/">
-                &copy; 2022 Wellington Pinho
-              </a>
+              <small>
+                2022 Deus seja louvado! Desenvolvedor
+                <a href="https://www.linkedin.com/in/wellpinho/">
+                  <small> Wellington Pinho</small>
+                </a>
+              </small>
             </span>
           </div>
 
