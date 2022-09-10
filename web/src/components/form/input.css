@@ -1,0 +1,38 @@
+.label {
+  max-width: 50%;
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 1rem;
+}
+
+.label::placeholder {
+  color: #7b7b7b;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .label {
+    max-width: 100%;
+    margin-bottom: 0.2rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 1rem;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}

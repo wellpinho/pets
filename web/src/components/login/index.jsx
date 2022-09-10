@@ -1,45 +1,39 @@
+import { Link } from "react-router-dom";
+import Input from "./../form";
 import "./login.css";
 
 const Login = () => {
+  function handleOnChange(event) {}
+
   return (
-    <main className="form-signin w-100 m-auto">
+    <main className="container">
       <form>
-        <img
-          className="mb-4"
-          src="/docs/5.2/assets/brand/bootstrap-logo.svg"
-          alt=""
-          width="72"
-          height="57"
+        <h1 className="h3 mb-3 fw-normal text-color">Login</h1>
+
+        <Input
+          text="Nome"
+          type="email"
+          name="name"
+          placeholder="Email"
+          handleOnChange={handleOnChange}
         />
-        <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
 
-        <div className="form-floating">
-          <input
-            type="email"
-            className="form-control"
-            id="floatingInput"
-            placeholder="name@example.com"
-          />
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div className="form-floating">
-          <input
-            type="password"
-            className="form-control"
-            id="floatingPassword"
-            placeholder="Password"
-          />
-          <label for="floatingPassword">Password</label>
-        </div>
+        <Input
+          text="Senha"
+          type="text"
+          name="password"
+          placeholder="Senha"
+          handleOnChange={handleOnChange}
+        />
 
-        <div className="checkbox mb-3">
-          <label>
-            <input type="checkbox" value="remember-me" /> Remember me
-          </label>
+        <div class="d-grid gap-2 col-6">
+          <button className="btn-custom" type="submit">
+            Entrar
+          </button>
         </div>
-        <button className="w-100 btn btn-lg btn-primary" type="submit">
-          Sign in
-        </button>
+        <p>
+          Não tem conta? <Link to="/register">Criar conta</Link>
+        </p>
       </form>
     </main>
   );
