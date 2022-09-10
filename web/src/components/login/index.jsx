@@ -1,13 +1,25 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Input from "./../form";
 import "./login.css";
+import { Context } from "./../../context/UserContext";
 
 const Login = () => {
-  function handleOnChange(event) {}
+  const [user, setUser] = useState({});
+  const { login } = useContext(Context);
+
+  function handleOnChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  function handleOnSubmit(e) {
+    e.preventDefault();
+    login(user);
+  }
 
   return (
     <main className="container">
-      <form>
+      <form onSubmit={handleOnSubmit}>
         <h1 className="h3 mb-3 fw-normal text-color">Login</h1>
 
         <Input
