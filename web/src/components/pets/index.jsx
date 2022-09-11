@@ -14,13 +14,37 @@ const MyPets = () => {
     api
       .get("/pets/mypets", {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem(JSON.parse(token))}`,
+          Authorization: `Bearer ${JSON.parse(token)}`,
         },
       })
       .then((response) => {
         setPets(response.data.pets);
       });
   }, [token]); // quando algo depende para continuar deve ser passado aqui
+
+  async function removePet(id) {
+    let msgType = "success";
+
+    const data = await api
+      .delete(`/pets/${id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+        },
+      })
+      .then((response) => {
+        // forma simples de atualizar list sem fazer requests no banco
+        const updateListPets = pets.filter((pet) => pet._id !== id);
+        setPets(updateListPets);
+
+        return response.data;
+      })
+      .catch((err) => {
+        msgType = "error";
+        return err.response.data;
+      });
+
+    setFlashMessage(data.message, msgType);
+  }
 
   return (
     <>
@@ -47,7 +71,7 @@ const MyPets = () => {
                   <>
                     {pet.adopter && <button>Cloncluir adoção</button>}
                     <Link to={`/pets/edit/${pet._id}`}>Editar</Link>
-                    <button>Excluir</button>
+                    <button onClick={() => removePet(pet._id)}>Excluir</button>
                   </>
                 ) : (
                   <p>Pet já foi adotado</p>
