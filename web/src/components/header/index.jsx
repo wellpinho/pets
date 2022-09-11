@@ -39,8 +39,21 @@ const Header = () => {
               </li>
               {authenticated ? (
                 <>
-                  <Link to="/users/profile">Perfil</Link>
-                  <li onClick={logout}>Sair</li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <Link to="/pets/mypets">Meus pets</Link>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
+                      <Link to="/users/profile">Perfil</Link>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link logout" onClick={logout}>
+                      Sair
+                    </a>
+                  </li>
                 </>
               ) : (
                 <>
