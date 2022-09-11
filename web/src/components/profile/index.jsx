@@ -2,6 +2,7 @@ import { useState } from "react";
 import api from "./../../utils/api";
 import userFlashMessage from "./../../hooks/useFlashMessage";
 import Input from "./../form";
+import ImageAvatar from "./../../components/imageAvatar";
 import "./profile.css";
 
 const Profile = () => {
@@ -68,7 +69,7 @@ const Profile = () => {
       <div className="profile-header">
         <h1>Perfil</h1>
         {(user.image || preview) && (
-          <img
+          <ImageAvatar
             src={
               preview
                 ? URL.createObjectURL(preview)
