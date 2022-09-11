@@ -38,7 +38,10 @@ const Header = () => {
                 </a>
               </li>
               {authenticated ? (
-                <li onClick={logout}>Sair</li>
+                <>
+                  <Link to="/users/profile">Perfil</Link>
+                  <li onClick={logout}>Sair</li>
+                </>
               ) : (
                 <>
                   <li className="nav-item">
