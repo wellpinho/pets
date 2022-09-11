@@ -10,6 +10,7 @@ import FlashMessage from "./components/flashMessage";
 import Profile from "./components/profile";
 import MyPets from "./components/pets";
 import AddPet from "./components/pets/add";
+import EditPet from "./components/pets/editePet";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/users/profile" element={<Profile />} />
             <Route path="/pets/mypets" element={<MyPets />} />
             <Route path="/pets/add" element={<AddPet />} />
+            <Route path="/pets/edit/:id" element={<EditPet />} />
           </Routes>
         </Container>
         <Footer />
