@@ -15,6 +15,7 @@
   border-radius: 0.2rem;
   background-color: #646cff;
   display: inline-block;
+  margin-left: 0.3rem;
 }
 
 .logout:hover {
@@ -29,5 +30,6 @@
 @media (max-width: 480px) {
   .logout {
     padding: 0 0.5rem;
+    margin-left: 0;
   }
 }

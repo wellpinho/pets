@@ -8,6 +8,8 @@ import { UserProvider } from "./context/UserContext";
 import Container from "./components/container";
 import FlashMessage from "./components/flashMessage";
 import Profile from "./components/profile";
+import MyPets from "./components/pets";
+import AddPet from "./components/pets/add";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/users/profile" element={<Profile />} />
+            <Route path="/pets/mypets" element={<MyPets />} />
+            <Route path="/pets/add" element={<AddPet />} />
           </Routes>
         </Container>
         <Footer />

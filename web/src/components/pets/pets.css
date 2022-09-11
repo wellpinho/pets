@@ -1,0 +1,33 @@
+.btn-pets {
+  color: #fff;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #646cff;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-left: 0.3rem;
+}
+
+.btn-pets:hover {
+  filter: brightness(0.9);
+  transition: 0.2s;
+  color: #c1c3eb;
+}
+
+.align-itens {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.select-form {
+  width: 50%;
+  margin-bottom: 0.3rem;
+}
+
+@media (max-width: 480px) {
+  .select-form {
+    width: 100%;
+    margin-bottom: 0.3rem;
+  }
+}

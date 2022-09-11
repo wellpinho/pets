@@ -5,3 +5,12 @@
 header {
   background-color: #fedb39;
 }
+
+.nav-link:hover {
+  background-color: #646cff;
+  border-radius: 0.2rem;
+}
+
+.nav-link a:hover {
+  color: #fff;
+}

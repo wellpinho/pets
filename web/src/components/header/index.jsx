@@ -37,7 +37,7 @@ const Header = () => {
                   <Link to="/">Adotar</Link>
                 </a>
               </li>
-              {authenticated ? (
+              {!authenticated ? (
                 <>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
