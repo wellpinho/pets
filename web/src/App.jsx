@@ -12,6 +12,7 @@ import MyPets from "./components/pets";
 import AddPet from "./components/pets/add";
 import EditPet from "./components/pets/editePet";
 import PetDetails from "./components/pets/details";
+import MyAdoptions from "./components/pets/myadoptions";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/users/profile" element={<Profile />} />
             <Route path="/pets/mypets" element={<MyPets />} />
             <Route path="/pets/add" element={<AddPet />} />
+            <Route path="/pets/myadoptions" element={<MyAdoptions />} />
             <Route path="/pets/edit/:id" element={<EditPet />} />
             <Route path="/pets/:id" element={<PetDetails />} />
           </Routes>

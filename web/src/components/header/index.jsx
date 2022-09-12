@@ -41,6 +41,11 @@ const Header = () => {
                 <>
                   <li className="nav-item">
                     <a className="nav-link" href="#">
+                      <Link to="/pets/mypets">Minhas adoções</Link>
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="#">
                       <Link to="/pets/mypets">Meus pets</Link>
                     </a>
                   </li>

@@ -46,6 +46,25 @@ const MyPets = () => {
     setFlashMessage(data.message, msgType);
   }
 
+  async function concludeAdoption(id) {
+    let msgType = "success";
+    const data = await api
+      .put(`/pets/conclude/${id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+        },
+      })
+      .then((response) => {
+        return response.data;
+      })
+      .catch((err) => {
+        msgType = "error";
+        return err.response.data;
+      });
+
+    setFlashMessage(data.message, msgType);
+  }
+
   return (
     <>
       <div className="alert alert-secondary" role="alert">
@@ -69,7 +88,15 @@ const MyPets = () => {
               <div className="actions">
                 {pet.available ? (
                   <>
-                    {pet.adopter && <button>Cloncluir adoção</button>}
+                    {pet.adopter && (
+                      <button
+                        onClick={() => {
+                          concludeAdoption(pet._id);
+                        }}
+                      >
+                        Cloncluir adoção
+                      </button>
+                    )}
                     <Link to={`/pets/edit/${pet._id}`}>Editar</Link>
                     <button onClick={() => removePet(pet._id)}>Excluir</button>
                   </>
