@@ -1,4 +1,5 @@
 import { Request, Response, Router } from "express";
+import { petRoutes } from "./modules/pet/routes/pet.routes";
 import { sessionRoutes } from "./modules/user/routes/session.routes";
 import { userRoutes } from "./modules/user/routes/user.routes";
 
@@ -10,5 +11,6 @@ routes.get("/", (req: Request, res: Response) => {
 
 routes.use(userRoutes);
 routes.use(sessionRoutes);
+routes.use(petRoutes);
 
 export { routes };
